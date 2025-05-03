@@ -1,0 +1,208 @@
+.container{
+  width: 100%;
+  height: 300vh;
+  display: flex;
+  justify-content: center;
+  background-color: #0B0B0B;
+}
+
+.container .container-centralize{
+  width: 75%;
+  height: 100%;
+}
+
+.container-centralize > header{
+  width: 75%;
+  height: 10%;
+  border-bottom: 2px solid #101010;
+  display: flex;
+  position: fixed;
+  background-color: #0B0B0B;
+}
+
+.container-centralize header .separete-header{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.container-centralize header .separete-header h1{
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 24px;
+  color: #97EDAA;
+}
+
+.container-centralize header .separete-header:last-child{
+  justify-content: space-around;
+  align-items: center;
+  color: whitesmoke;
+}
+
+.container-centralize header .separete-header a{
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.container-centralize section#home{
+  width: 90%;
+  height: 500px;
+  margin-top: 10%;
+  display: flex;
+}
+
+section#home > div{
+  width: 50%;
+  height: 100%;
+}
+
+section#home > div:first-child{
+  display: flex;
+  align-items: center;
+}
+
+section#home > div .container-text{
+  width: 419px;
+  height: 200px;
+  color: whitesmoke;
+}
+
+.container-text > header, .container-text .infos-wraper{
+  width: 100%;
+  height: 50%;
+}
+
+.container-text > header{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container-text > header p{
+  font-size: 20px;
+}
+
+.container-text > header h1{
+  font-size: 35px;
+  color: #97EDAA;
+}
+
+.container-text .infos-wraper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container-text .infos-wraper header p{
+  font-size: 20px
+}
+
+.container-text .infos-wraper .button-wraper button{
+  width: 193px;
+  height: 37px;
+  background-color: #97EDAA;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.container-text .infos-wraper .button-wraper button:hover{
+  background-color: #70f38c;
+}
+
+section#home > div:last-child .image{
+  width: 95%;
+  height: 95%;
+  background-size: cover;
+  background-position: center;
+}
+
+.container-centralize section#aboutMe{
+  width: 100%;
+  height: 405px;
+  margin-top: 5%;
+}
+
+section#aboutMe header{
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+section#aboutMe header h1{
+  color: #97EDAA;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+section#aboutMe header p{
+  font-size: 18px;
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+section#aboutMe .container-infosMe{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  color: whitesmoke;
+}
+
+section#aboutMe .container-infosMe .infosMe-wraper{
+  width: 70%;
+  height: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-infosMe .infosMe-wraper .infoMe{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-infosMe .infosMe-wraper .infoMe .icon{
+  width: 62px;
+  height: 62px;
+}
+
+.container-infosMe .infosMe-wraper .infoMe .sub-info h1{
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.container-infosMe .infosMe-wraper .infoMe .info a, .infoMe .info p{
+  font-size: 18px;
+  font-weight: 400;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+section#projects{
+  width: 100%;
+  margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+}
+
+section#projects header{
+  width: 100%;
+  color: #97EDAA;
+}
+
+section#projects header h1{
+  font-size: 32px;
+  text-align: center;
+}

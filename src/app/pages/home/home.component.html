@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="container-centralize">
+    <header>
+      <div class="separete-header">
+        <h1>&lt;Felipe Alves/&gt;</h1>
+      </div><!-- separete-header -->
+
+      <div class="separete-header">
+        <a>Início</a>
+        <a>Sobre mim</a>
+        <a>Projetos</a>
+        <a>Serviços</a>
+        <a>Habilidades</a>
+      </div><!-- separete-header -->
+    </header>
+
+    <section id="home">
+      <div>
+        <div class="container-text">
+          <header>
+            <p>Olá, eu sou</p>
+            <h1>Felipe Alves</h1>
+          </header>
+
+          <div class="infos-wraper">
+            <header>
+              <p>Desenvolvedor Front-end</p>
+            </header>
+
+            <div class="button-wraper">
+              <button>Baixar curriculo</button>
+            </div><!-- button-wraper -->
+          </div><!-- infos-wraper -->
+        </div><!-- container-text -->
+      </div>
+
+      <div>
+        <div class="image" style="background-image: url('images/image.svg');"></div><!-- image -->
+      </div>
+    </section><!-- inicio -->
+
+    <section id="aboutMe">
+      <header>
+        <h1>Sobre mim</h1>
+
+        <p>Oi! Eu sou Felipe Alves, programador full stack de 14 anos, com um ano de experiência e uma paixão especial por tecnologia. Este portfólio é ao mesmo tempo um projeto pessoal e o reflexo da minha jornada contínua no mundo da programação. Gosto de transformar ideias em código e enfrento desafios que me tiram da zona de conforto. O que parece impossível para mim é, na verdade, uma questão de como encarar a situação. Com disciplina e curiosidade, aprendo todos os dias para evoluir e me tornar um desenvolvedor cada vez melhor.</p>
+      </header>
+
+      <div class="container-infosMe">
+        <div class="infosMe-wraper">
+          @for(info of aboutMe_infos; track info){
+            <div class="infoMe">
+              <div class="icon" [innerHTML]="info.icon"></div><!-- icon -->
+
+              <div class="sub-info">
+                <h1>{{info.sub_info}}</h1>
+              </div><!-- sub-info -->
+
+              <div class="info">
+                @if(info.redirectTo !== ''){
+                  <a target="_blank" [href]="info.redirectTo">{{ info.info }}</a>
+                }@else{
+                  <p>{{ info.info }}</p>
+                }
+              </div><!-- info -->
+            </div><!-- infoMe -->
+          }
+        </div><!-- infosMe-wraper -->
+      </div><!-- container-infosMe -->
+    </section><!-- aboutMe -->
+  </div><!-- container-centralize -->
+</div><!-- container -->

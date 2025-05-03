@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Mefolio": {
+    "jordanShoes": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/mefolio",
+            "outputPath": "dist/jordan-shoes",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -21,6 +21,11 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "assets",
+                "output": "assets"
+              },
               {
                 "glob": "**/*",
                 "input": "public"
@@ -59,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Mefolio:build:production"
+              "buildTarget": "jordanShoes:build:production"
             },
             "development": {
-              "buildTarget": "Mefolio:build:development"
+              "buildTarget": "jordanShoes:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,6 +84,11 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "assets",
+                "output": "assets"
+              },
               {
                 "glob": "**/*",
                 "input": "public"
