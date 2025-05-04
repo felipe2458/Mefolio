@@ -28,7 +28,7 @@
             </header>
 
             <div class="button-wraper">
-              <button>Baixar curriculo</button>
+              <button>Baixar currículo</button>
             </div><!-- button-wraper -->
           </div><!-- infos-wraper -->
         </div><!-- container-text -->
@@ -68,5 +68,39 @@
         </div><!-- infosMe-wraper -->
       </div><!-- container-infosMe -->
     </section><!-- aboutMe -->
+
+    <section id="projects">
+      <header>
+        <h1>Projetos</h1>
+      </header>
+
+      <div class="container-projects">
+        @for(project of projects; track project){
+          <div class="project-wraper">
+            <header>
+              <div class="container-slides">
+                @for(imgOp of project.slide; track imgOp){
+                  <div class="slide"
+                  [ngStyle]="{ 'background-image': 'url(' + imgOp.image + ')', 'opacity': imgOp.opacity }"
+                  ></div><!-- slide -->
+                }
+              </div><!-- container-slides -->
+            </header>
+
+            <div class="container-infos">
+              <div class="infos-wraper">
+                <h1>{{ project.name_project }}</h1>
+                <p>{{  project.technologies }}</p>
+              </div><!-- infos-wraper -->
+
+              <div class="links-wraper">
+                <a [href]="project.url_of_project" target="_blank">Acessar projeto</a>
+                <a [href]="project.url_of_repository" target="_blank">Acessar repositório</a>
+              </div><!-- links-wraper -->
+            </div><!-- container-infos -->
+          </div><!-- project-wraper -->
+        }
+      </div><!-- container-projects -->
+    </section><!-- projects -->
   </div><!-- container-centralize -->
 </div><!-- container -->

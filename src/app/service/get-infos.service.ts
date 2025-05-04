@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AboutMeInfos } from '../interface/int';
+import { AboutMeInfos, Projects } from '../interface/int';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,11 @@ import { AboutMeInfos } from '../interface/int';
 export class GetInfosService {
   constructor(private http: HttpClient) { }
 
-  getInfos(): Observable<AboutMeInfos[]>{
+  getAboutMeInfos(): Observable<AboutMeInfos[]>{
     return this.http.get<AboutMeInfos[]>('assets/json/aboutMe.json');
+  }
+
+  getProjects(): Observable<Projects[]>{
+    return this.http.get<Projects[]>('assets/json/projects.json');
   }
 }
