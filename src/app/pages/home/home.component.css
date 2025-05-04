@@ -241,6 +241,15 @@ section#projects .container-projects .project-wraper{
   position: absolute;
   border-radius: 4px;
   border: 1px solid #1F1F1F;
+  transition: opacity 0.5s;
+}
+
+.project-wraper:first-child .container-slides .slide:last-child{
+  background-position: center;
+}
+
+.project-wraper:nth-of-type(3) .container-slides .slide:last-child{
+  background-position: center -20px;
 }
 
 .project-wraper .container-infos{

@@ -77,7 +77,7 @@
       <div class="container-projects">
         @for(project of projects; track project){
           <div class="project-wraper">
-            <header>
+            <header #ObersavableHeader>
               <div class="container-slides">
                 @for(imgOp of project.slide; track imgOp){
                   <div class="slide"
