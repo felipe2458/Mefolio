@@ -20,3 +20,21 @@ export interface Projects {
   opacity_slides: { opacity: number }[];
   slide: { image: string, opacity: number }[];
 }
+
+export interface Services{
+  icon: string;
+  service: string;
+}
+
+export interface SafeServices extends Omit<Services, 'icon'>{
+  icon: SafeHtml;
+}
+
+export interface Skills{
+  title: string;
+  icon: string;
+}
+
+export interface SafeSkills extends Omit<Skills, 'icon'>{
+  icon: SafeHtml;
+}

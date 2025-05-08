@@ -6,11 +6,11 @@
       </div><!-- separete-header -->
 
       <div class="separete-header">
-        <a>Início</a>
-        <a>Sobre mim</a>
-        <a>Projetos</a>
-        <a>Serviços</a>
-        <a>Habilidades</a>
+        <a (click)="scrollToSection('home')">Início</a>
+        <a (click)="scrollToSection('aboutMe')">Sobre mim</a>
+        <a (click)="scrollToSection('projects')">Projetos</a>
+        <a (click)="scrollToSection('services')">Serviços</a>
+        <a (click)="scrollToSection('skills')">Habilidades</a>
       </div><!-- separete-header -->
     </header>
 
@@ -105,5 +105,41 @@
         }
       </div><!-- container-projects -->
     </section><!-- projects -->
+
+    <section id="services">
+      <header>
+        <h1>Serviços</h1>
+      </header>
+
+      <section class="container-services">
+        @for(service of services; track service){
+          <article>
+            <div class="article-content">
+              <div class="icon" [innerHTML]="service.icon"></div><!-- icon -->
+
+              <h1>{{ service.service }}</h1>
+            </div><!-- article-content -->
+          </article>
+        }
+      </section><!-- container-services -->
+    </section><!-- services -->
+
+
+    <section id="skills">
+      <header>
+        <h1>Habilidades</h1>
+      </header>
+
+      <section class="container-skills">
+        @for(skill of skills; track skill){
+          <article [title]="skill.title" [innerHTML]="skill.icon"></article>
+        }
+      </section><!-- container-skills -->
+    </section><!-- skills -->
   </div><!-- container-centralize -->
+
+  <footer>
+    <div><p>&#64; 2025 - Felipe Alves</p></div>
+    <div><p>Powered by <span>{{ '{)' }}</span></p></div>
+  </footer>
 </div><!-- container -->

@@ -1,5 +1,5 @@
 import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
-import { Projects, SafeAboutMeInfos } from '../../interface/int';
+import { Projects, SafeAboutMeInfos, SafeServices, SafeSkills } from '../../interface/int';
 import { GetInfosService } from '../../service/get-infos.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
@@ -16,6 +16,8 @@ export class HomeComponent{
   projects!: Projects[];
   slide_initializer: boolean[] = [];
   intervals: any[] = [];
+  services!: SafeServices[];
+  skills!: SafeSkills[];
 
   constructor(private getInfos: GetInfosService, private sanitizer: DomSanitizer){
     this.getInfos.getAboutMeInfos().subscribe(infos => {
@@ -53,6 +55,32 @@ export class HomeComponent{
         return true;
       }
     })
+
+    this.getInfos.getServices().subscribe(services => {
+      this.services = services.map(s => ({
+        ...s,
+        icon: this.sanitizer.bypassSecurityTrustHtml(s.icon)
+      }))
+    })
+
+    this.getInfos.getSkills().subscribe(skills => {
+      this.skills = skills.map(s => ({
+        ...s,
+        icon: this.sanitizer.bypassSecurityTrustHtml(s.icon)
+      }))
+    })
+  }
+
+  scrollToSection(id: string, offset: number = 140){
+    const element = document.getElementById(id);
+    if (element){
+      const topPosition = element.getBoundingClientRect().top + window.scrollY;
+
+      window.scrollTo({
+        top: topPosition - offset,
+        behavior: 'smooth'
+      });
+    }
   }
 
   slideInicializer(){
