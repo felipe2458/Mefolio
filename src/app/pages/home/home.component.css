@@ -241,7 +241,7 @@ section#projects .container-projects .project-wraper{
   position: absolute;
   border-radius: 4px;
   border: 1px solid #1F1F1F;
-  transition: opacity 0.5s;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .project-wraper:first-child .container-slides .slide:last-child{

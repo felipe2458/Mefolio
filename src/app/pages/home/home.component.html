@@ -81,7 +81,10 @@
               <div class="container-slides">
                 @for(imgOp of project.slide; track imgOp){
                   <div class="slide"
-                  [ngStyle]="{ 'background-image': 'url(' + imgOp.image + ')', 'opacity': imgOp.opacity }"
+                  [ngStyle]="{
+                    'background-image': 'url(' + imgOp.image + ')',
+                    'opacity': imgOp.opacity,
+                      }"
                   ></div><!-- slide -->
                 }
               </div><!-- container-slides -->

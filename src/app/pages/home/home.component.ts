@@ -15,6 +15,7 @@ export class HomeComponent{
   aboutMe_infos!: SafeAboutMeInfos[];
   projects!: Projects[];
   slide_initializer: boolean[] = [];
+  intervals: any[] = [];
 
   constructor(private getInfos: GetInfosService, private sanitizer: DomSanitizer){
     this.getInfos.getAboutMeInfos().subscribe(infos => {
@@ -31,13 +32,13 @@ export class HomeComponent{
         if(Array.isArray(project.image_url)){
           project.slide = project.image_url.map((img, i) => ({
             image: img.image,
-            opacity: i === 0 ? 1 : 0
+            opacity: i === 0 ? 1 : 0,
           }))
         }
       })
     })
 
-    this.slide_initializer = new Proxy([false, false, false, false], {
+    this.slide_initializer = new Proxy([false, false, false], {
       set: (target, prop: string, value) => {
         const oldValue = target[prop as any];
 
@@ -45,6 +46,7 @@ export class HomeComponent{
           if(!isNaN(Number(prop))){
             target[prop as any] = value;
             this.slideInicializer();
+            this.slideReset();
           }
         }
 
@@ -54,42 +56,24 @@ export class HomeComponent{
   }
 
   slideInicializer(){
+    this.intervals.forEach(clearInterval);
+    this.intervals = [];
+
     const IndexOfSlide = this.slide_initializer.map((value, index)=> value === true ? index: -1).filter(value => value !== -1);
 
     function addOpacity(slide: { opacity: number }){
-      const interval = setInterval(()=>{
-        if(slide.opacity >= 1){
-          clearInterval(interval);
-          return;
-        }
-
-        slide.opacity = Number((slide.opacity + 0.1).toFixed(1));
-      }, 500)
+      slide.opacity = 1;
     }
 
     function removeOpacity(slide: { opacity: number }){
-      const interval = setInterval(()=>{
-        if(slide.opacity > 1){
-          clearInterval(interval);
-          return;
-        }
-
-        if(slide.opacity <= 0){
-          clearInterval(interval);
-          return;
-        }
-
-        console.log(slide.opacity)
-
-        slide.opacity = Number((slide.opacity - 0.1).toFixed(1));
-      }, 500)
+      slide.opacity = 0;
     }
 
     IndexOfSlide.forEach(i => {
       const slide = this.projects[i].slide;
       let currentIndex = slide.findIndex(s => s.opacity === 1);
 
-      setInterval(()=>{
+      const intervalId = setInterval(()=>{
         const nextIndex = (currentIndex + 1) % slide.length;
 
         removeOpacity(slide[currentIndex]);
@@ -98,20 +82,33 @@ export class HomeComponent{
         currentIndex = nextIndex;
       }, 5000)
 
+      this.intervals.push(intervalId)
     });
+  }
+
+  slideReset(){
+    const indexOfSlide = this.slide_initializer.map((value, index)=> value === false ? index: -1).filter(value => value !== -1);
+
+    indexOfSlide.forEach(i => {
+      if(!this.projects[i] || !this.projects[i].slide) return;
+
+      this.projects[i].slide.forEach((s, ip) => {
+        s.opacity = ip === 0 ? 1 : 0;
+      })
+    })
   }
 
   ngAfterViewInit(){
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const index = entry.target.getAttribute('data-index');
+        const index = Number(entry.target.getAttribute('data-index'));
 
         if(entry.isIntersecting){
-          this.slide_initializer[Number(index)] = true;
+          this.slide_initializer[index] = true;
           return;
         }
 
-        this.slide_initializer[Number(index)] = false;
+        this.slide_initializer[index] = false;
       })
     })
 
