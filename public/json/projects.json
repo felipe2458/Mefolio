@@ -1,0 +1,42 @@
+[
+  {
+    "image_url": [
+      { "image": "images/image_blog.jpg" },
+      { "image": "images/image_blog1.jpg" }
+    ],
+    "name_project": "Blog",
+    "technologies": "Angular 19+",
+    "url_of_project": "https://felipe2458.github.io/Blog/",
+    "url_of_repository": "https://github.com/felipe2458/Blog"
+  },
+  {
+    "image_url": [
+      { "image": "images/image_jordan.jpg" },
+      { "image": "images/image_jordan1.jpg" }
+    ],
+    "name_project": "JordanShoes",
+    "technologies": "Angular 19+",
+    "url_of_project": "https://felipe2458.github.io/JordanShoes/",
+    "url_of_repository": "https://github.com/felipe2458/JordanShoes"
+  },
+  {
+    "image_url": [
+      { "image": "images/image_techBlog.jpg" },
+      { "image": "images/image_techBlog1.jpg" },
+      { "image": "images/image_techBlog2.jpg" }
+    ],
+    "name_project": "TechBlog",
+    "technologies": "Angular 19+",
+    "url_of_project": "https://felipe2458.github.io/TechBlog/",
+    "url_of_repository": "https://github.com/felipe2458/TechBlog"
+  },
+  {
+    "image_url": [
+      { "image": "images/image_login.jpg" }
+    ],
+    "name_project": "Login",
+    "technologies": "Angular 19+",
+    "url_of_project": "https://felipe2458.github.io/Login/",
+    "url_of_repository": "https://github.com/felipe2458/Login"
+  }
+]

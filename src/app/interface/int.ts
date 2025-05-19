@@ -33,6 +33,7 @@ export interface SafeServices extends Omit<Services, 'icon'>{
 export interface Skills{
   title: string;
   icon: string;
+  class: string;
 }
 
 export interface SafeSkills extends Omit<Skills, 'icon'>{

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "jordanShoes": {
+    "Mefolio": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -11,21 +11,16 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/jordan-shoes",
+            "outputPath": "docs",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "assets",
-                "output": "assets"
-              },
               {
                 "glob": "**/*",
                 "input": "public"
@@ -46,8 +41,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "12kB",
+                  "maximumError": "16kB"
                 }
               ],
               "outputHashing": "all"
@@ -64,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "jordanShoes:build:production"
+              "buildTarget": "Mefolio:build:production"
             },
             "development": {
-              "buildTarget": "jordanShoes:build:development"
+              "buildTarget": "Mefolio:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,11 +79,6 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "assets",
-                "output": "assets"
-              },
               {
                 "glob": "**/*",
                 "input": "public"

@@ -1,3 +1,19 @@
+::ng-deep .wh100p svg{
+  height: 100px;
+}
+
+::ng-deep .w80p svg{
+  width: 80px;
+}
+
+::ng-deep .h80p svg{
+  height: 80px;
+}
+
+::ng-deep .w70p svg{
+  width: 70px;
+}
+
 .container{
   width: 100%;
   display: flex;
@@ -8,6 +24,9 @@
 
 .container .container-centralize{
   width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container-centralize > header{
@@ -78,7 +97,8 @@ section#home > div .container-text{
   gap: 10px;
 }
 
-.container-text > header p{
+.container-text > header p,
+.container-text .infos-wraper header p{
   font-size: 20px;
 }
 
@@ -91,10 +111,6 @@ section#home > div .container-text{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.container-text .infos-wraper header p{
-  font-size: 20px
 }
 
 .container-text .infos-wraper .button-wraper button{
@@ -118,6 +134,7 @@ section#home > div:last-child .image{
   height: 95%;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .container-centralize section#aboutMe{
@@ -319,6 +336,8 @@ section#skills header h1{
 section#services .container-services{
   width: 100%;
   height: 80%;
+  display: flex;
+  justify-content: space-between;
 }
 
 section#services .container-services article{
@@ -354,6 +373,11 @@ section#services .container-services article .article-content{
 section#services .container-services article .article-content .icon{
   width: 56px;
   height: 56px;
+}
+
+article .article-content .icon svg{
+  width: 100%;
+  height: 100%;
 }
 
 article .article-content h1{
@@ -403,7 +427,6 @@ footer{
   width: 100%;
   height: 100px;
   background-color: #101010;
-  margin-top: 5%;
   color: whitesmoke;
   display: flex;
 }
@@ -423,4 +446,367 @@ footer div p{
 
 footer div span{
   color: #97EDAA;
+}
+
+@media screen and (max-width: 1650px){
+  .container .container-centralize{
+    width: 90%;
+  }
+
+  .container-centralize > header{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1380px){
+  section#projects{
+    width: 80%;
+    min-height: 2000px;
+  }
+
+  section#projects .container-projects{
+    gap: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  section#projects .container-projects .project-wraper{
+    min-width: calc(592px * 1.4);
+    height: calc(400px * 1.4);
+  }
+
+  section#services .container-services article{
+    width: calc(384px * 0.8);
+    height: calc(240px * 0.8);
+  }
+
+  section#services .container-services article .article-content .icon{
+    width: calc(56px * 0.8);
+    height: calc(56px * 0.8);
+  }
+
+  section#skills .container-skills article{
+    width: calc(176px * 0.8);
+    height: calc(150px * 0.8);
+  }
+
+  ::ng-deep .wh100p svg{
+    height: calc(100px * 0.8);
+  }
+
+  ::ng-deep .w80p svg{
+    width: calc(80px * 0.8);
+    height: calc(80px * 0.8);
+  }
+
+  ::ng-deep .h80p svg{
+    height: calc(80px * 0.8);
+  }
+
+  ::ng-deep .w70p svg{
+    width: calc(70px * 0.8);
+  }
+
+  footer div p{
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1110px){
+  .container-centralize header .separete-header h1{
+    font-size: 22px;
+  }
+
+  .container-centralize header .separete-header a{
+    font-size: 16px;
+  }
+
+  .container-text > header p,
+  .container-text .infos-wraper header p{
+    font-size: 18px;
+  }
+
+  .container-text > header h1,
+  section#aboutMe header h1{
+    font-size: 30px;
+  }
+
+  section#aboutMe header p{
+    font-size: 15px;
+  }
+
+  .container-infosMe .infosMe-wraper .infoMe .sub-info h1{
+    font-size: 17px;
+  }
+
+  .container-infosMe .infosMe-wraper .infoMe .info a,
+  .infoMe .info p{
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1100px){
+  section#home > div:last-child {
+    display: flex;
+    align-items: center;
+  }
+
+  section#home > div:last-child .image{
+    width: 100%;
+    height: 70%;
+  }
+
+  section#projects .container-projects .project-wraper{
+    min-width: calc(592px * 1.4 * 0.8);
+    height: calc(400px * 1.4 * 0.8);
+  }
+
+  section#services{
+    height: auto;
+  }
+
+  section#services header{
+    height: 100px;
+  }
+
+  section#services .container-services{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: 850px){
+  .container-centralize header{
+    width: 100%;
+    justify-content: center;
+  }
+
+  .container-centralize header .separete-header{
+    width: 70%;
+  }
+
+  .container-centralize header .separete-header:first-child{
+    display: none;
+  }
+
+  .container-centralize header .separete-header h1{
+    font-size: 20px;
+  }
+
+  .container-centralize header .separete-header a{
+    font-size: 14px;
+  }
+
+  .container-text > header p,
+  .container-text .infos-wraper header p{
+    font-size: 16px;
+  }
+
+  .container-text > header h1,
+  section#aboutMe header h1,
+  section#projects header h1,
+  section#services header h1,
+  section#skills header h1{
+    font-size: 26px;
+  }
+
+  section#aboutMe header p{
+    font-size: 13px;
+  }
+
+  .project-wraper .container-infos .infos-wraper h1{
+    font-size: 22px;
+  }
+
+  .project-wraper .container-infos .infos-wraper p{
+    font-size: 16px;
+  }
+
+  .container-infosMe .infosMe-wraper .infoMe .sub-info h1{
+    font-size: 15px;
+  }
+
+  .container-infosMe .infosMe-wraper .infoMe .info a,
+  .infoMe .info p{
+    font-size: 14px;
+  }
+
+  article .article-content h1{
+    font-size: 24px;
+  }
+
+  section#skills{
+    height: auto;
+    box-sizing: content-box;
+  }
+
+  section#skills header{
+    padding: 2rem;
+  }
+
+  section#skills .container-skills{
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  section#skills .container-skills article{
+    width: 176px;
+    height: 150px;
+  }
+
+  footer{
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 730px){
+  .container .container-centralize{
+    width: 100%;
+  }
+
+  section#aboutMe header p{
+    padding: 0 2rem;
+    font-size: 10px;
+  }
+
+  section#aboutMe .container-infosMe{
+    align-items: center;
+    padding-left: 10px;
+  }
+
+  section#aboutMe .container-infosMe .infosMe-wraper{
+    width: 90%;
+  }
+
+  section#projects{
+    width: 100%;
+  }
+
+  section#projects .container-projects{
+    width: 100%;
+  }
+
+  section#projects .container-projects .project-wraper{
+    min-width: calc(592px * 1.4 * 0.6);
+    height: calc(400px * 1.4 * 0.7);
+  }
+}
+
+@media screen and (max-width: 600px){
+  .container-centralize  header .separete-header{
+    width: 100%;
+  }
+
+  section#home{
+    max-height: 300px;
+  }
+
+  section#home > div:first-child{
+    width: 50%;
+  }
+
+  section#home div .container-text{
+    width: 100%;
+  }
+
+  .container-centralize section#aboutMe{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  section#aboutMe .container-infosMe{
+    height: auto;
+    padding: 0;
+  }
+
+  section#aboutMe .container-infosMe .infosMe-wraper{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 80px;
+  }
+
+  .container-infosMe .infosMe-wraper .infoMe{
+    justify-content: space-between;
+  }
+
+  .container-infosMe .infosMe-wraper .infoMe .icon{
+    width: 40px;
+    height: 40px;
+  }
+
+  .container-infosMe .infosMe-wraper .infoMe .sub-info h1{
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .container-infosMe .infosMe-wraper .infoMe .info a, .infoMe .info p{
+    font-size: 8px;
+    font-weight: 400;
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
+  section#projects .container-projects .project-wraper{
+    width: 100%;
+    min-width: 0px;
+  }
+}
+
+@media screen and (max-width: 430px){
+  .container-centralize header .separete-header a{
+    font-size: 12px;
+  }
+
+  section#home > div:first-child{
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  section#home div .container-text{
+    width: 70%;
+  }
+
+  section#home > div:last-child{
+    display: none;
+  }
+
+  section#aboutMe{
+    min-height: 350px;
+  }
+
+  section#aboutMe header p{
+    font-size: 8px;
+  }
+
+  section#projects .container-projects{
+    gap: 100px;
+    align-items: center;
+  }
+
+  .project-wraper .container-infos .infos-wraper{
+    padding-left: 17px;
+  }
+
+  .project-wraper .container-infos .links-wraper{
+    justify-content: space-around;
+    gap: 0;
+  }
+
+  .project-wraper .container-infos .links-wraper a{
+    width: calc(206px * 0.8);
+    font-size: 14px;
+  }
+
+  .project-wraper header .container-slides .slide{
+    background-position: center;
+  }
 }

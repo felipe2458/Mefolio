@@ -24,7 +24,7 @@
 
           <div class="infos-wraper">
             <header>
-              <p>Desenvolvedor Front-end</p>
+              <p>Desenvolvedor Full-Stack</p>
             </header>
 
             <div class="button-wraper">
@@ -132,7 +132,7 @@
 
       <section class="container-skills">
         @for(skill of skills; track skill){
-          <article [title]="skill.title" [innerHTML]="skill.icon"></article>
+          <article [title]="skill.title" [ngClass]="skill.class" [innerHTML]="skill.icon"></article>
         }
       </section><!-- container-skills -->
     </section><!-- skills -->
